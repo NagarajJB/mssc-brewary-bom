@@ -25,13 +25,13 @@
 	</licenses>
 
 	<organization>
-		<name>Spring Framework NJB</name>
+		<name>NJB</name>
 	</organization>
 
 	<developers>
 		<developer>
-			<name>Nag</name>
-			<organization>ABCD</organization>
+			<name>Nagaraja JB</name>
+			<organization>NJB</organization>
 		</developer>
 	</developers>
 
@@ -278,4 +278,87 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
+
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
+
+	<profiles>
+		<profile>
+			<id>ossrh</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.6.8</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>3.0.1</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>3.0.1</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<!-- Exclude Lombok enhanced classes -->
+							<!-- <excludePackageNames>guru.sfg.brewery.model.*:*.mapper.*:*.domain.*:*.mappers.*</excludePackageNames> -->
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+
+	<scm>
+		<connection>scm:git:git@github.com:NagarajJB/mssc-brewery-bom.git</connection>
+		<developerConnection>scm:git:git@github.com:NagarajJB/mssc-brewery-bom.git</developerConnection>
+		<url>https://github.com/NagarajJB/mssc-brewery-bom.git</url>
+		<tag>HEAD</tag>
+	</scm>
+
 </project>
