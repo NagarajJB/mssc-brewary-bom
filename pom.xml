@@ -10,7 +10,7 @@
 
 	<groupId>com.njb</groupId>
 	<artifactId>mssc-brewery-bom</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>mssc-brewery-bom</name>
 
