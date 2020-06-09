@@ -8,7 +8,7 @@
 		<relativePath />
 	</parent>
 
-	<groupId>com.njb</groupId>
+	<groupId>com.njb1</groupId>
 	<artifactId>mssc-brewery-bom</artifactId>
 	<version>0.0.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
